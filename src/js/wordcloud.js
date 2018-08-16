@@ -37,35 +37,6 @@ const words = [
 let width = document.querySelector('.skills').offsetWidth - 30
 let wordCloud = d3.select('.skills')
 
-const layout = cloud()
-  .size([width, 300])
-  .words(words)
-  .padding(5)
-  .rotate(function () { return ~~(Math.random() * 2) * 90 })
-  .font('Impact')
-  .fontSize((d) => { return d.size })
-  .on('end', _draw)
-
-const _draw = (words) => {
-  wordCloud.append('svg')
-    .attr('width', layout.size()[0])
-    .attr('height', layout.size()[1])
-    .call(_responsivefy)
-    .append('g')
-    .attr('transform', 'translate(' + layout.size()[0] / 2 + ',' + layout.size()[1] / 2 + ')')
-    .selectAll('text')
-    .data(words)
-    .enter().append('text')
-    .style('font-size', (d) => { return d.size + 'px' })
-    .style('font-family', 'Impact')
-    .style('fill', '#fff')
-    .attr('text-anchor', 'middle')
-    .attr('transform', (d) => {
-      return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
-    })
-    .text((d) => { return d.text })
-}
-
 const _responsivefy = (svg) => {
   // get container + svg aspect ratio
   let container = d3.select(svg.node().parentNode),
@@ -92,6 +63,35 @@ const _responsivefy = (svg) => {
     svg.attr('height', Math.round(targetWidth / aspect))
   }
 }
+
+const _draw = (words) => {
+  wordCloud.append('svg')
+    .attr('width', layout.size()[0])
+    .attr('height', layout.size()[1])
+    .call(_responsivefy)
+    .append('g')
+    .attr('transform', 'translate(' + layout.size()[0] / 2 + ',' + layout.size()[1] / 2 + ')')
+    .selectAll('text')
+    .data(words)
+    .enter().append('text')
+    .style('font-size', (d) => { return d.size + 'px' })
+    .style('font-family', 'Impact')
+    .style('fill', '#fff')
+    .attr('text-anchor', 'middle')
+    .attr('transform', (d) => {
+      return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
+    })
+    .text((d) => { return d.text })
+}
+
+const layout = cloud()
+  .size([width, 300])
+  .words(words)
+  .padding(5)
+  .rotate(function () { return ~~(Math.random() * 2) * 90 })
+  .font('Impact')
+  .fontSize((d) => { return d.size })
+  .on('end', _draw)
 
 export default function () {
   return layout.start()
