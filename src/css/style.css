@@ -567,7 +567,7 @@ ol.type li a:hover {
 
 .timeline > li .timeline-image h4 {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 10px;
   text-transform: uppercase;
 }
 
@@ -598,7 +598,6 @@ ol.type li a:hover {
 .timeline .timeline-heading h4 {
   margin-top: 0;
   text-transform: uppercase;
-  font-size: 16px;
 }
 
 .timeline .timeline-heading h2 {
@@ -835,6 +834,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
   .timeline > li .timeline-image h4 {
     margin-top: 16px;
     line-height: 18px;
+    font-size: 14px;
     font-weight: 400;
   }
 
