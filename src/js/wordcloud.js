@@ -4,8 +4,8 @@
  *  Word cloud generation
  */
 
-const d3 = require('d3'),
-  cloud = require('d3-cloud')
+import * as d3 from 'd3'
+import cloud from 'd3-cloud'
 
 const words = [
   {text: 'JavaScript', size: 100},
