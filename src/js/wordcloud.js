@@ -6,6 +6,13 @@
 
 import * as d3 from 'd3'
 import cloud from 'd3-cloud'
+import 'd3-transition'
+
+const config = {
+  root: null, // avoiding 'root' or setting it to 'null' sets it to default value: viewport
+  rootMargin: '0px',
+  threshold: 0.5,
+}
 
 const words = [
   {text: 'JavaScript', size: 100},
@@ -34,8 +41,9 @@ const words = [
   {text: 'Jenkins', size: 25},
 ]
 
-let width = document.querySelector('.skills').offsetWidth - 30
-let wordCloud = d3.select('.skills')
+const SKILLS = document.getElementById('skill-container')
+let width = SKILLS.offsetWidth - 30
+let wordCloud = d3.select('#skill-container')
 
 const _responsivefy = (svg) => {
   // get container + svg aspect ratio
@@ -74,12 +82,20 @@ const _draw = (words) => {
     .selectAll('text')
     .data(words)
     .enter().append('text')
+  //.style('transform', 'translate(0,0) rotate(0)')
+    .style('transform', (d) => {
+      return `translate(${d.x / 8}px, ${d.y / 8}px) rotate(${d.rotate / 8}deg)`
+    })
+    .style('fill', '#fff')
+    .transition()
+    .duration(2500)
+    .ease(d3.easeBounceOut)
     .style('font-size', (d) => { return d.size + 'px' })
-    .style('font-family', 'Impact')
+    .style('font-family', 'Kanit')
     .style('fill', '#fff')
     .attr('text-anchor', 'middle')
-    .attr('transform', (d) => {
-      return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
+    .style('transform', (d) => {
+      return `translate(${d.x}px, ${d.y}px) rotate(${d.rotate}deg)`
     })
     .text((d) => { return d.text })
 }
@@ -89,10 +105,20 @@ const layout = cloud()
   .words(words)
   .padding(5)
   .rotate(function () { return ~~(Math.random() * 2) * 90 })
-  .font('Impact')
+  .font('Kanit')
   .fontSize((d) => { return d.size })
   .on('end', _draw)
 
 export default function () {
-  return layout.start()
+  let observer = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // we are ENTERING the "capturing frame". Set the flag.
+        layout.start()
+        observer.unobserve(SKILLS)
+      }
+    })
+  }, config)
+
+  observer.observe(SKILLS)
 }

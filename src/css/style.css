@@ -1,5 +1,5 @@
 body, html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Kanit', sans-serif;
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   color: #656c6d;
@@ -21,7 +21,7 @@ h2 {
   color: #121d1f;
   font-weight: 400;
   margin-bottom: 30px;
-  font-size: 34px;
+  font-size: 42px;
 }
 
 h3, h4 {
@@ -49,7 +49,7 @@ a {
 
 a:hover, a:focus {
   text-decoration: none;
-  color: #7bc3d1;
+  color: #4ca2cd;
 }
 
 ul, ol {
@@ -88,7 +88,7 @@ hr {
   width: 70px;
   text-align: center;
   position: relative;
-  background: #7bc3d1;
+  background: #4ca2cd;
   margin: 0 auto;
   margin-bottom: 30px;
   border: 0;
@@ -146,14 +146,14 @@ hr {
 
 .navbar-custom .nav li a:hover {
   outline: 0;
-  color: #7bc3d1;
+  color: #4ca2cd;
   background-color: transparent;
 }
 
 .navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
   outline: 0;
   background-color: transparent;
-  color: #7bc3d1;
+  color: #4ca2cd;
 }
 
 .navbar-custom .nav li.active {
@@ -194,8 +194,8 @@ hr {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active {
   color: #fff;
-  background-color: #7bc3d1;
-  border-color: #7bc3d1;
+  background-color: #4ca2cd;
+  border-color: #4ca2cd;
 }
 
 .btn-primary i.fa {
@@ -211,7 +211,7 @@ hr {
   text-align: center;
   color: #fff;
   background: url(../img/intro-bg.jpg) no-repeat center top;
-  background-color: #7bc3d1;
+  background-color: #4ca2cd;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -232,6 +232,20 @@ hr {
   margin-left: 10px;
 }
 
+#about .about-text .btn {
+  margin-top: 40px;
+  font-size: 18px;
+  padding: 16px 20px;
+}
+
+#about .about-text p:first-child {
+  margin-top: 45px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 30px;
+}
+
 #about img {
   border-radius: 50%;
   width: 200px;
@@ -247,7 +261,10 @@ hr {
 /* Skills Section */
 #skills {
   padding: 100px 0;
-  background: #7bc3d1;
+  background: #67B26F; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #4ca2cd, #67B26F); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
 }
 
 #skills h2 {
@@ -334,7 +351,7 @@ ol.type li {
 }
 
 ol.type li a {
-  background: #7bc3d1;
+  background: #4ca2cd;
   color: #fff;
   padding: 6px 14px;
 }
@@ -464,7 +481,7 @@ ol.type li a:hover {
 /* Achivements Section */
 #achievements {
   padding: 100px 0;
-  background: #7bc3d1;
+  background: #4ca2cd;
 }
 
 #achievements h2 {
@@ -605,7 +622,7 @@ ol.type li a:hover {
 
 .timeline .timeline-heading h4.subheading {
   text-transform: none;
-  color: #629ca7;
+  color: #4ca2cd;
   font-size: 20px;
 }
 
@@ -617,7 +634,10 @@ ol.type li a:hover {
 #contact {
   padding: 100px 0 40px 0;
   color: #fff;
-  background: #7bc3d1;
+  background: #67B26F; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #4ca2cd, #67B26F); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-attachment: fixed;
 }
 
 #contact h2 {
@@ -648,6 +668,13 @@ ol.type li a:hover {
   display: block;
   color: #fff;
   margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+#contact p {
+  font-size: 18px;
+  line-height: 26px;
 }
 
 #contact .text-danger {
@@ -765,7 +792,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 }
 
 #footer a:hover {
-  color: #7bc3d1;
+  color: #4ca2cd;
 }
 
 /* Media Queries */
