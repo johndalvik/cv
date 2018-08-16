@@ -6,10 +6,10 @@
 
 import '../css/style.css'
 import { LuminousGallery } from 'luminous-lightbox'
-import SmoothScroll from './smooth-scroll.polyfills'
+import SmoothScroll from 'smooth-scroll'
 import wordcloud from './wordcloud'
 
-function initPage () {
+const initPage = () => {
   new SmoothScroll('a[href*="#"]')
   new LuminousGallery(document.querySelectorAll('a[data-photo]'), {}, {arrowNavigation: true})
   let mobileMenuBtn = document.querySelector('.navbar-toggle')
