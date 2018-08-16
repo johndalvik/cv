@@ -4,7 +4,6 @@
  * Index js
  **/
 
-import '../css/style.css'
 import { LuminousGallery } from 'luminous-lightbox'
 import SmoothScroll from 'smooth-scroll'
 import wordcloud from './wordcloud'
