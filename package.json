@@ -8,11 +8,16 @@
   "private": true,
   "scripts": {
     "echo:version": "echo $npm_package_version",
-    "build:production": "gulp prod"
+    "build": "webpack"
   },
   "dependencies": {
     "ansi-colors": "^2.0.5",
     "autoprefixer": "^9.1.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
     "css-mqpacker": "^7.0.0",
     "dateformat": "^3.0.3",
     "del": "^3.0.0",
@@ -38,6 +43,14 @@
     "gulp-svgmin": "^1.2.4",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
-    "gulplog": "latest"
+    "gulplog": "latest",
+    "luminous-lightbox": "^2.2.1",
+    "mini-css-extract-plugin": "^0.4.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "style-loader": "^0.22.1",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "url-loader": "^1.1.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
   }
 }
