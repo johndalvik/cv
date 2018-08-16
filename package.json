@@ -19,6 +19,8 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "css-mqpacker": "^7.0.0",
+    "d3": "^5.5.0",
+    "d3-cloud": "^1.2.5",
     "dateformat": "^3.0.3",
     "del": "^3.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
