@@ -5,6 +5,7 @@ const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
 const config = require('./webpack.config')
+const htmlmin = require('gulp-htmlmin')
 
 gulp.task('build-css', () => {
   return gulp.src('dist/*.css')
@@ -19,16 +20,21 @@ gulp.task('build-js', () => {
   return buildJS()
 })
 
-gulp.task('move-css', () => {
-  return gulp.src('src/css/**.css')
-    .pipe(gulp.dest('dist'))
+gulp.task('minify-html', () => {
+  return gulp.src('./index.html')
+    .pipe(htmlmin({collapseWhitespace: true, removeComments: true, sortClassName: true}))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('./'))
 })
 
-gulp.task('css', gulp.series('move-css', 'build-css'))
-gulp.task('build', gulp.series('build-js', 'css'))
+gulp.task('move-files', () => {
+  return gulp.src('./src/css/*')
+    .pipe(gulp.dest('./dist'))
+})
 
+gulp.task('build', gulp.series('build-js', 'move-files', 'build-css', 'minify-html'))
 
-function buildJS() {
+function buildJS () {
   return new Promise(resolve => {
     return webpack(config, (err, stats) => {
       if (err) {
