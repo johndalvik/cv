@@ -1,14 +1,14 @@
 {
   "name": "cv",
   "version": "1.0.0",
-  "description": "HBO GO5 appsite development",
+  "description": "My online cv's repository",
   "main": "./index.html",
   "author": "Akos Horvath",
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "echo:version": "echo $npm_package_version",
-    "build": "webpack"
+    "build": "gulp build"
   },
   "dependencies": {
     "ansi-colors": "^2.0.5",
@@ -30,9 +30,6 @@
     "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^4.0.0",
-    "gulp-jsdoc3": "^2.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-mocha": "^6.0.0",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^8.0.0",
     "gulp-remote-src": "^0.4.3",
@@ -41,10 +38,6 @@
     "gulp-sass": "^4.0.1",
     "gulp-sass-error": "^1.0.5",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-ssh": "^0.7.0",
-    "gulp-ssh-deploy": "0.0.3",
-    "gulp-strip-debug": "^3.0.0",
-    "gulp-svgmin": "^1.2.4",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "gulplog": "latest",
