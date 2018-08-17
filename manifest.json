@@ -1,0 +1,21 @@
+{
+  "name": "Akos Horvath - Front End Developer - Budapest",
+  "short_name": "Akos Horvath",
+  "description": "Experienced Frontend Developer with a demonstrated history of working in the information technology and services industry. Skilled in modern frameworks like Angular.js (1,2), Vue.js, and have a lot of experience with ES6(7) Javascript.",
+  "lang": "en-GB",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "img/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
