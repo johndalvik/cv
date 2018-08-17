@@ -43,6 +43,7 @@ const words = [
 
 let SKILLS = document.getElementById('skill-container')
 let width = SKILLS.offsetWidth - 30
+console.log(SKILLS.offsetWidth, width)
 let wordCloud = d3.select('#skill-container')
 const DURATION = 1500
 
@@ -67,7 +68,7 @@ const _responsivefy = (svg) => {
 
   // get width of container and resize svg to fit it
   function resize () {
-    let targetWidth = parseInt(container.style('width'))
+    let targetWidth = parseInt(container.style('width')) - 30
     svg.attr('width', targetWidth)
     svg.attr('height', Math.round(targetWidth / aspect))
   }

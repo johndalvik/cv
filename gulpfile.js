@@ -58,7 +58,7 @@ gulp.task('watch-js', () => {
 })
 
 gulp.task('watch', () => {
-  return gulp.watch(['./src/scss/*.scss', './src/js/*.js'], gulp.parallel(['build-sass', 'build-sass']))
+  return gulp.watch(['./src/scss/*.scss', './src/js/*.js'], gulp.series(['build']))
 })
 
 gulp.task('minify-html', () => {
