@@ -43,7 +43,6 @@ const words = [
 
 let SKILLS = document.getElementById('skill-container')
 let width = SKILLS.offsetWidth - 30
-console.log(SKILLS.offsetWidth, width)
 let wordCloud = d3.select('#skill-container')
 const DURATION = 1500
 
