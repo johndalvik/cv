@@ -12,20 +12,41 @@
   &:before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -45px;
     bottom: 0;
     left: 40px;
-    width: 2px;
-    margin-left: -1.5px;
-    background-color: #eee;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    z-index: 555;
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/circle.svg);
   }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    border-left: 2px dotted #d2d2d2;
+  }
+
   > li {
     position: relative;
     margin-bottom: 50px;
     min-height: 50px;
     &:before {
       content: " ";
-      display: table;
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      width: 65px;
+      left: calc(50% - 70px);
+      border-top: 2px dotted #d2d2d2;
     }
     &:after {
       content: " ";
@@ -51,22 +72,15 @@
         border-left-width: 0;
       }
     }
-    .timeline-image {
-      z-index: 100;
+    &.timeline-inverted:before {
+      content: " ";
       position: absolute;
-      left: 0;
-      width: 70px;
-      height: 70px;
-      margin-left: 0;
-      border: 1px solid #eee;
-      border-radius: 100%;
-      text-align: center;
-      background: #fff;
-      h4 {
-        margin-top: 20px;
-        font-size: 10px;
-        text-transform: uppercase;
-      }
+      top: 50%;
+      height: 2px;
+      left: initial;
+      margin-left: 5px;
+      width: 65px;
+      border-top: 2px dotted #d2d2d2;
     }
     &.timeline-inverted > .timeline-panel {
       float: right;

@@ -13,6 +13,16 @@
   padding: 25px 0 45px 0;
 }
 
+.navbar-brand {
+  img {
+    opacity: 0.75;
+    transition: opacity 300ms ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 /* Achivements Section */
 #achievements {
   padding: 100px 0;
@@ -78,7 +88,7 @@
       left: 50%;
     }
     > li {
-      margin-bottom: 100px;
+      margin-bottom: 30px;
       min-height: 100px;
       .timeline-panel {
         float: left;
