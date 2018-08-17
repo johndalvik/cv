@@ -1,0 +1,64 @@
+/**Custom Styles*/
+
+.lum-lightbox-inner {
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-transition: background .3s ease-in-out;
+  -moz-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+}
+
+.lum-lightbox.lum-open {
+  z-index: 500;
+}
+
+.lum-gallery-button {
+  overflow: hidden;
+  text-indent: 150%;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100px;
+  max-height: 100%;
+  width: 60px;
+  cursor: pointer;
+}
+
+.lum-previous-button {
+  left: 12px;
+}
+
+.lum-next-button {
+  right: 12px;
+}
+
+.lum-gallery-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  border-top: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+.lum-previous-button:after {
+  transform: translateY(-50%) rotate(-45deg);
+  border-left: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: -2px 0 rgba(0, 0, 0, 0.2);
+  left: 12%;
+  border-radius: 3px 0 0 0;
+}
+
+.lum-next-button:after {
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.2);
+  right: 12%;
+  border-radius: 0 3px 0 0;
+}

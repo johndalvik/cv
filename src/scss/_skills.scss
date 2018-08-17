@@ -1,0 +1,17 @@
+/* Skills Section */
+
+#skills {
+  padding: 100px 0;
+  background: #67B26F;
+  background: linear-gradient(to top, #4ca2cd, #67B26F);
+  background-attachment: fixed;
+  h2 {
+    color: #fff;
+  }
+  hr {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  #skill-containers svg {
+    width: 100%;
+  }
+}

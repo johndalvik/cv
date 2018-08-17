@@ -1,0 +1,31 @@
+/* About Section */
+
+#about {
+  padding: 100px 0;
+  background: #f6f6f6;
+  .about-text {
+    margin-left: 10px;
+    .btn {
+      margin-top: 40px;
+      font-size: 18px;
+      padding: 16px 20px;
+    }
+    p:first-child {
+      margin-top: 45px;
+      font-size: 18px;
+      text-align: center;
+      line-height: 28px;
+      margin-bottom: 30px;
+    }
+  }
+  img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+  }
+  p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+}
