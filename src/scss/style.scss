@@ -13,9 +13,17 @@
   padding: 25px 0 45px 0;
 }
 
+.navbar-toggler {
+  &:focus, &:hover, &:visited {
+    outline: none;
+  }
+}
+
 .navbar-brand {
+  max-width: 60%;
   img {
     opacity: 0.75;
+    width: 100%;
     transition: opacity 300ms ease-in-out;
     &:hover {
       opacity: 1;
@@ -84,10 +92,14 @@
     padding-bottom: 200px;
   }
   .timeline {
-    &:before {
+    &:before, &:after {
       left: 50%;
     }
     > li {
+      &:before {
+        left: calc(50% - 70px);
+        margin-left: 0;
+      }
       margin-bottom: 30px;
       min-height: 100px;
       .timeline-panel {
@@ -107,6 +119,9 @@
           font-size: 14px;
           font-weight: 400;
         }
+      }
+      &.timeline-inverted:before {
+        left: initial;
       }
       &.timeline-inverted > .timeline-panel {
         float: right;
