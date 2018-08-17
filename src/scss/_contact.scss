@@ -3,9 +3,23 @@
 #contact {
   padding: 100px 0 40px 0;
   color: #fff;
-  background: #67B26F;
-  background: linear-gradient(to top, #4ca2cd, #67B26F);
-  background-attachment: fixed;
+  &:after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: scale(1.1);
+    bottom: 0;
+    filter: blur(5px) brightness(0.5);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: url("../img/contact.jpg");
+  }
+  /*  background: #67B26F;
+  background: linear-gradient(to top, #4ca2cd, #67B26F);*/
   h2 {
     color: #fff;
   }
@@ -31,6 +45,11 @@
     margin: 0 0 10px;
     font-size: 18px;
     line-height: 26px;
+
+    &:hover {
+      color: rgba(#fff, 0.8);
+      filter: blur(0.75px);
+    }
   }
   p {
     font-size: 18px;
@@ -43,6 +62,7 @@
 
   .contact-item {
     i {
+      display: block;
       margin-bottom: 10px
     }
   }
@@ -79,6 +99,17 @@ a:focus {
 #contact {
   .social {
     margin-top: 60px;
+
+    a {
+      color: #fff;
+      transition: color 0.5s ease-in-out;
+      &:hover {
+        i {
+          color: rgba(#fff, 0.8);
+            filter: blur(.75px);
+        }
+      }
+    }
     ul li {
       display: inline-block;
       margin: 0 20px;
@@ -87,7 +118,6 @@ a:focus {
       font-size: 30px;
       padding: 4px 5px;
       color: #fff;
-      transition: all 0.5s;
       &:hover {
         color: #121d1f;
       }

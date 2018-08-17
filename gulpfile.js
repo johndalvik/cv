@@ -45,17 +45,20 @@ gulp.task('build-sass', () => {
     .pipe(gulp.dest(config.out))
 })
 
-gulp.task('build-css', () => {
-  return gulp.src(config.cssin)
-    .pipe(postcss([autoprefixer({browsers: ['last 2 versions', 'ie 11']})]))
-    .pipe(cleanCSS())
-    .pipe(postcss([require('css-mqpacker')()]))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(config.out))
-})
-
 gulp.task('build-js', () => {
   return buildJS()
+})
+
+gulp.task('watch-sass', () => {
+  return gulp.watch('./src/scss/*.scss', gulp.series('build-sass'))
+})
+
+gulp.task('watch-js', () => {
+  return gulp.watch('./src/js/*.js', gulp.series('build-js'))
+})
+
+gulp.task('watch', () => {
+  return gulp.watch(['./src/scss/*.scss', './src/js/*.js'], gulp.parallel(['build-sass', 'build-sass']))
 })
 
 gulp.task('minify-html', () => {
@@ -64,11 +67,6 @@ gulp.task('minify-html', () => {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./'))
 })
-
-/*gulp.task('move-files', () => {
-  return gulp.src('src/css/!*')
-    .pipe(gulp.dest('./dist'))
-})*/
 
 gulp.task('build', gulp.series('build-js', 'build-sass', 'minify-html'))
 
