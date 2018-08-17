@@ -3,10 +3,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/js/index.js',
+  devtool: 'source-map',
   output: {
-    filename: 'app.min.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {

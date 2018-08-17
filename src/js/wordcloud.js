@@ -41,9 +41,10 @@ const words = [
   {text: 'Jenkins', size: 25},
 ]
 
-const SKILLS = document.getElementById('skill-container')
+let SKILLS = document.getElementById('skill-container')
 let width = SKILLS.offsetWidth - 30
 let wordCloud = d3.select('#skill-container')
+const DURATION = 1500
 
 const _responsivefy = (svg) => {
   // get container + svg aspect ratio
@@ -74,7 +75,7 @@ const _responsivefy = (svg) => {
 
 const _draw = (words) => {
   wordCloud.append('svg')
-    .attr('width', layout.size()[0])
+    .attr('width', width)
     .attr('height', layout.size()[1])
     .call(_responsivefy)
     .append('g')
@@ -88,7 +89,7 @@ const _draw = (words) => {
     })
     .style('fill', '#fff')
     .transition()
-    .duration(2500)
+    .duration(DURATION)
     .ease(d3.easeBounceOut)
     .style('font-size', (d) => { return d.size + 'px' })
     .style('font-family', 'Kanit')
@@ -111,13 +112,11 @@ const layout = cloud()
 
 export default function () {
   let observer = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // we are ENTERING the "capturing frame". Set the flag.
-        layout.start()
-        observer.unobserve(SKILLS)
-      }
-    })
+    if (entries[0].isIntersecting) {
+      // we are ENTERING the "capturing frame". Set the flag.
+      layout.start()
+      observer.unobserve(SKILLS)
+    }
   }, config)
 
   observer.observe(SKILLS)

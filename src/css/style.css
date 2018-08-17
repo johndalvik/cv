@@ -938,6 +938,6 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
   z-index: 500;
 }
 
-.skills svg {
+#skill-containers svg {
   width: 100%;
 }
