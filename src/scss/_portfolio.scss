@@ -1,4 +1,5 @@
 /* Portfolio Section */
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 #portfolio {
   padding: 80px 0;
@@ -66,4 +67,20 @@
   font-size: 20px;
   padding: 5px;
   color: #E87E04;
+}
+
+@include media-breakpoint-down(xs) {
+  .hover-bg .hover-text > h4 {
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    transform: translateY(0);
+  }
+  .hover-bg .hover-text {
+    > i {
+      opacity: 1;
+      -webkit-backface-visibility: hidden;
+      transform: translateY(100%);
+    }
+    opacity: 1;
+  }
 }

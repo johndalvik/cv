@@ -47,6 +47,7 @@
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "gulplog": "latest",
+    "intersection-observer": "^0.5.0",
     "luminous-lightbox": "^2.2.1",
     "mini-css-extract-plugin": "^0.4.1",
     "optimize-css-assets-webpack-plugin": "^5.0.0",

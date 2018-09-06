@@ -3,7 +3,7 @@
 /**
  * Index js
  **/
-
+import 'intersection-observer'
 import { LuminousGallery } from 'luminous-lightbox'
 import SmoothScroll from 'smooth-scroll'
 import wordcloud from './wordcloud'

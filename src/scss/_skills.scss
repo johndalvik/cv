@@ -1,4 +1,5 @@
 /* Skills Section */
+@import "defaults";
 
 #skills {
   padding: 100px 0;
@@ -11,7 +12,11 @@
   hr {
     background: rgba(255, 255, 255, 0.3);
   }
-  #skill-containers svg {
-    width: 100%;
+  #skill-container {
+    @include hwAcceleration();
+    svg {
+      @include hwAcceleration();
+      width: 100%;
+    }
   }
 }
